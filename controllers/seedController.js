@@ -1,7 +1,9 @@
 const express = require('express');
 const router = express.Router();
 
-var music = require('../models/music.js');
+var Music = require('../models/music.js');
+
+// seed data
 
 var newMusic = [
   {
@@ -42,8 +44,6 @@ var newMusic = [
   }
 ];
 
-
-
 // seed route
 
 router.get('/', (req,res)=>{
@@ -64,6 +64,5 @@ router.get('/dropdatabase', (req,res)=>{
   Music.collection.drop();
   res.send('Dropped database.');
 });
-
 
 module.exports = router;
