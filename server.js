@@ -5,7 +5,13 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const port = 3000 || process.env.PORT;
 
-//use bodyparser and public folder
+//controllers
+var musicController = require('./controllers/musicController');
+var seedController = require('./controllers/seedController');
+
+app.use('/music', musicController);
+app.use('/seed', seedController);
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(express.static('public'));
