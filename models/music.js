@@ -3,10 +3,10 @@ const mongoose = require('mongoose');
 // model
 
 const musicSchema = mongoose.Schema({
-  Artist: String,
-  Album: String,
-  Year: String,
-  Picture: String
+  artist: String,
+  album: String,
+  year: String,
+  picture: String
 })
 
 const music = mongoose.model('Music', musicSchema);
