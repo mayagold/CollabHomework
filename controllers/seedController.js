@@ -1,5 +1,5 @@
-const express = require('express');
-const router = express.Router();
+var express = require('express');
+var router = express.Router();
 
 var Music = require('../models/music.js');
 
@@ -53,7 +53,7 @@ router.get('/', (req,res)=>{
       res.send('Could not seed database.');
     } else {
       console.log('Seeded database with all the quality tunes');
-      res.redirect('/');
+      res.redirect('/music');
     }
   });
 });

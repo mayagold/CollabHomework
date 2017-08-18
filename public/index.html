@@ -22,19 +22,19 @@
 
     <ul>
       <li ng-repeat='album in main.album'>
-        <span ng-click='main.editAlbum(album);'>
           Artist: {{album.artist}}<br/>
           Album: {{album.albumname}}<br/>
           Year: {{album.year}}<br/>
-        </span>
           <img ng-src='{{album.picture}}'/>
-          <button ng-click="main.deleteAlbum(album)">Delete</button>
-          <form ng-submit='main.editAlbum(album)'>
-            Artist: <input type='text' ng-model='main.updateArtist' placeholder='Artist'/>
-            Album: <input type='text' ng-model='main.updateAlbum' placeholder='Album'/>
-            Year: <input type='text' ng-model='main.updateYear' placeholder='Year'/>
-            Picture: <input type='text' ng-model='main.updatePicture' placeholder='URL'/>
-            <input type='submit' value='Update Album'/>
+          <button ng-click="main.deleteAlbum(album);">Delete</button>
+
+          <a href="#" ng-click="main.editFormToShow = $index">Edit This Album</a>
+          <form class="form-style" ng-if="$index===main.editFormToShow">
+            <input type="text" ng-model="main.updateArtist" placeholder="Artist"/>
+            <input type="text" ng-model="main.updateAlbumname" placeholder="Album"/>
+            <input type="text" ng-model="main.updateYear" placeholder="Year"/>
+            <input type="text" ng-model="main.updatePicture" placeholder="URL"/>
+            <input type="submit" value="Update" ng-click="main.editAlbum(album);">
           </form>
       </li>
     </ul>

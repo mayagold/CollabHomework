@@ -8,7 +8,7 @@ const app = angular.module('musicApp', []);
 app.controller('mainController', ['$http', function($http){
 
   const controller = this;
-  // this.album = [];
+  this.album = [];
   this.formdata = {};
 
   // get route
@@ -31,8 +31,8 @@ app.controller('mainController', ['$http', function($http){
       data: controller.formdata
     }).then(function(response){
       controller.album.push(response.config.data);
-    }, function(){
-      console.log('error');
+    }, function(err){
+      console.log(err);
     })
   };
 
@@ -54,19 +54,23 @@ app.controller('mainController', ['$http', function($http){
   // update route
   //
   this.editAlbum = function(album){
-    console.log(album)
     $http({
       method: 'PUT',
       url: '/music/' + album._id,
       data: {
-        artist: this.updateArtist,
-        album: this.updateAlbum,
-        year: this.updateYear,
-        picture: this.updatePicture
+        artist: controller.updateArtist,
+        albumname: controller.updateAlbum,
+        year: controller.updateYear,
+        picture: controller.updatePicture
       }
     }).then(
       function(response){
-        controller.getAlbum();
+        album.artist = controller.updateArtist;
+        album.albumname = controller.updateAlbum;
+        album.year = controller.updateYear;
+        album.picture = controller.updatePicture;
+
+        console.log(album)
       }, function(error){
         console.log(error);
       }

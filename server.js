@@ -17,6 +17,9 @@ app.use(bodyParser.urlencoded({extended:false}));
 app.use(express.static('public'));
 
 
+
+
+
 //connect to mongo
 mongoose.connect('mongodb://localhost/music_app');
 mongoose.connection.once('open', ()=>{
