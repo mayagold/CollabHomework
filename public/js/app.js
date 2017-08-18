@@ -53,18 +53,25 @@ app.controller('mainController', ['$http', function($http){
 
   // update route
   //
-  // this.editAlbum = function(album){
-  //   $http({
-  //     method: 'PUT',
-  //     url: '/music/' + album._id,
-  //   }).then(
-  //     function(response){
-  //       controller.getAlbum();
-  //     }, function(error){
-  //       console.log(error);
-  //     }
-  //   )
-  // }
+  this.editAlbum = function(album){
+    console.log(album)
+    $http({
+      method: 'PUT',
+      url: '/music/' + album._id,
+      data: {
+        artist: this.updateArtist,
+        album: this.updateAlbum,
+        year: this.updateYear,
+        picture: this.updatePicture
+      }
+    }).then(
+      function(response){
+        controller.getAlbum();
+      }, function(error){
+        console.log(error);
+      }
+    );
+  }
 
   this.getAlbum();
 }]);
