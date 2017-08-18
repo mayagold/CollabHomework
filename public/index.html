@@ -21,28 +21,33 @@
 
     <ul>
       <li ng-repeat='album in main.album'>
-        <div class="description">
           Artist: {{album.artist}}<br/>
-          Album: {{album.album}}<br/>
+          Album: {{album.albumname}}<br/>
           Year: {{album.year}}<br/>
-        </div>
-        <div class="album-cover">
           <img ng-src='{{album.picture}}'/>
-        </div>
+          <button ng-click="main.deleteAlbum(album)">Delete</button>
       </li>
     </ul>
 
     <!-- form : add a new album to the site -->
 
-
-    <form ng-submit='main.createAlbum()'>
-      <h2>Add New Album</h2>
-      Artist: <input type='text' placeholder='Artist' ng-model="main.formData.artist"/><br/>
-      Album: <input type='text' placeholder='Album' ng-model="main.formData.album"/><br/>
-      Year: <input type='text' placeholder='Year' ng-model="main.formData.year"/><br/>
-      Picture: <input type='text' placeholder='URL'ng-model="main.formData.picture"/><br>
-      <button type='submit' value='Create New Album'>Submit</button>
+    <form ng-submit="main.createAlbum()">
+      <label><span>Artist: </span><input type="text" ng-model="main.artist"/></label>
+      <label><span>Album: </span><input type="text" ng-model="main.albumname"/></label>
+      <label><span>Year: </span><input type="text" ng-model="main.year"/></label>
+      <label><span>Album Image: </span><input type="text" ng-model="main.picture"/></label>
+      <input type="submit" Add to List/>
     </form>
+
+
+    <!-- <form ng-submit='main.createAlbum()'>
+      <h2>Add New Album</h2>
+      Artist: <input type='text' placeholder='Artist' ng-model="main.newAlbum.artist"/><br/>
+      Album: <input type='text' placeholder='Album' ng-model="main.newAlbum.album"/><br/>
+      Year: <input type='text' placeholder='Year' ng-model="main.newAlbum.year"/><br/>
+      Picture: <input type='text' placeholder='URL'ng-model="main.newAlbum.picture"/><br>
+      <button type='submit' value='Create New Album'>Submit</button>
+    </form> -->
 
 
   </body>

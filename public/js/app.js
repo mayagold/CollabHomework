@@ -6,9 +6,10 @@ const app = angular.module('musicApp', []);
 
 // Main Controller
 app.controller('mainController', ['$http', function($http){
+
   const controller = this;
-  this.music = 'lalala';
-  this.formData = {};
+  this.album = [];
+
   // get route
   this.getAlbum = function() {
     $http({
@@ -20,21 +21,55 @@ app.controller('mainController', ['$http', function($http){
       console.log(err);
     });
   }
+
   // create route
   this.createAlbum = function() {
-    console.log('called createAlbum function');
     $http({
       method: 'POST',
       url: '/music',
-      data: controller.formData
-    }).then(function(response, data){
-      console.log(response.config.data);
+      data: {
+        artist: controller.artist,
+        albumname: controller.albumname,
+        year: controller.year,
+        picture: controller.picture
+      }
+    }).then(function(response){
+      console.log(response);
       controller.album.push(response.config.data);
-      console.log(controller.album);
-    }, function(err){
-      console.log(err);
+    }, function(){
+      console.log('error');
     })
-    console.log(controller.album);
   };
+
+  // delete route
+
+  this.deleteAlbum = function(album) {
+    $http({
+      method: 'DELETE',
+      url: '/music/' + album._id
+    }).then(
+      function(response){
+        controller.getAlbum();
+      }, function(error){
+        console.log(error);
+      }
+    )
+  }
+
+  // update route
+  //
+  // this.editAlbum = function(album){
+  //   $http({
+  //     method: 'PUT',
+  //     url: '/music/' + album._id,
+  //   }).then(
+  //     function(response){
+  //       controller.getAlbum();
+  //     }, function(error){
+  //       console.log(error);
+  //     }
+  //   )
+  // }
+
   this.getAlbum();
 }]);
