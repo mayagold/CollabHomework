@@ -75,10 +75,6 @@ form {
     width: 60%;
 }
 
-.form-style h3,a {
-  color: black;
-}
-
 .form-style input {
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -96,16 +92,4 @@ form {
 
 .form-style input:hover {
     background: lightgrey;
-}
-
-form .submit {
-  font-family: "open sans condensed", sans-serif;
-  text-align: center;
-  border: none;
-  padding: 10px;
-  background: whitesmoke;
-  font-size: 18px;
-  margin: 0 auto;
-  font-weight: bold;
-  box-shadow: 1px 1px 4px black;
 }
