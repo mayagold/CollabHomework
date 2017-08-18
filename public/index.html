@@ -32,10 +32,10 @@
     <!-- form : add a new album to the site -->
 
     <form ng-submit="main.createAlbum()">
-      <label><span>Artist: </span><input type="text" ng-model="main.artist"/></label>
-      <label><span>Album: </span><input type="text" ng-model="main.albumname"/></label>
-      <label><span>Year: </span><input type="text" ng-model="main.year"/></label>
-      <label><span>Album Image: </span><input type="text" ng-model="main.picture"/></label>
+      <label><span>Artist: </span><input type="text" ng-model="main.formdata.artist"/></label>
+      <label><span>Album: </span><input type="text" ng-model="main.formdata.albumname"/></label>
+      <label><span>Year: </span><input type="text" ng-model="main.formdata.year"/></label>
+      <label><span>Album Image: </span><input type="text" ng-model="main.formdata.picture"/></label>
       <input type="submit" Add to List/>
     </form>
 

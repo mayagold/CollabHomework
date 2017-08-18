@@ -8,7 +8,8 @@ const app = angular.module('musicApp', []);
 app.controller('mainController', ['$http', function($http){
 
   const controller = this;
-  this.album = [];
+  // this.album = [];
+  this.formdata = {};
 
   // get route
   this.getAlbum = function() {
@@ -27,14 +28,8 @@ app.controller('mainController', ['$http', function($http){
     $http({
       method: 'POST',
       url: '/music',
-      data: {
-        artist: controller.artist,
-        albumname: controller.albumname,
-        year: controller.year,
-        picture: controller.picture
-      }
+      data: controller.formdata
     }).then(function(response){
-      console.log(response);
       controller.album.push(response.config.data);
     }, function(){
       console.log('error');
