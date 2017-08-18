@@ -66,10 +66,9 @@ app.controller('mainController', ['$http', function($http){
     }).then(
       function(response){
         album.artist = controller.updateArtist;
-        album.albumname = controller.updateAlbum;
+        album.albumname = controller.updateAlbumname;
         album.year = controller.updateYear;
         album.picture = controller.updatePicture;
-
         console.log(album)
       }, function(error){
         console.log(error);

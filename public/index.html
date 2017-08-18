@@ -29,12 +29,12 @@
           <button ng-click="main.deleteAlbum(album);">Delete</button>
 
           <a href="#" ng-click="main.editFormToShow = $index">Edit This Album</a>
-          <form class="form-style" ng-if="$index===main.editFormToShow">
-            <input type="text" ng-model="main.updateArtist" placeholder="Artist"/>
-            <input type="text" ng-model="main.updateAlbumname" placeholder="Album"/>
-            <input type="text" ng-model="main.updateYear" placeholder="Year"/>
-            <input type="text" ng-model="main.updatePicture" placeholder="URL"/>
-            <input type="submit" value="Update" ng-click="main.editAlbum(album);">
+          <form class="form-style2" ng-if="$index===main.editFormToShow">
+            <label><input type="text" ng-model="main.updateArtist" placeholder="Artist"/></label>
+            <label><input type="text" ng-model="main.updateAlbumname" placeholder="Album"/></label>
+            <label><input type="text" ng-model="main.updateYear" placeholder="Year"/></label>
+            <label><input type="text" ng-model="main.updatePicture" placeholder="URL"/></label>
+            <label><input type="submit" value="Update" ng-click="main.editAlbum(album);">
           </form>
       </li>
     </ul>
@@ -48,16 +48,6 @@
       <label><span>Album Image: </span><input type="text" ng-model="main.formdata.picture"/></label>
       <input type="submit" Add to List/>
     </form>
-
-
-    <!-- <form ng-submit='main.createAlbum()'>
-      <h2>Add New Album</h2>
-      Artist: <input type='text' placeholder='Artist' ng-model="main.newAlbum.artist"/><br/>
-      Album: <input type='text' placeholder='Album' ng-model="main.newAlbum.album"/><br/>
-      Year: <input type='text' placeholder='Year' ng-model="main.newAlbum.year"/><br/>
-      Picture: <input type='text' placeholder='URL'ng-model="main.newAlbum.picture"/><br>
-      <button type='submit' value='Create New Album'>Submit</button>
-    </form> -->
 
 
   </body>

@@ -45,12 +45,19 @@ form {
   border-radius: 30px;
   width: 40%;
   margin: 0 auto;
-  box-shadow: 10px 10px 5px #000000;
+
 }
 
 .form-style {
   max-width: 500px;
   margin: 20px auto;
+  text-align: center;
+  box-shadow: 10px 10px 5px #000000;
+}
+
+.form-style2 {
+  width: 120px;
+  margin: 10px auto;
   text-align: center;
 }
 
@@ -90,6 +97,22 @@ form {
     outline: none;
 }
 
+.form-style2 input {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    border: 1px solid #C2C2C2;
+
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    outline: none;
+}
+
 .form-style input:hover {
+    background: lightgrey;
+}
+
+.form-style2 input:hover {
     background: lightgrey;
 }
