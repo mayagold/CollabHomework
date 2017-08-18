@@ -7,6 +7,7 @@
     <meta charset="utf-8">
     <title>Our Favorite Music</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great|Open+Sans+Condensed:300" rel="stylesheet">
     <!-- AngularJS Link -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js" charset="utf-8"></script>
     <!-- Link to app.js file -->
@@ -31,7 +32,7 @@
 
     <!-- form : add a new album to the site -->
 
-    <form ng-submit="main.createAlbum()">
+    <form class="form-style" ng-submit="main.createAlbum()">
       <label><span>Artist: </span><input type="text" ng-model="main.formdata.artist"/></label>
       <label><span>Album: </span><input type="text" ng-model="main.formdata.albumname"/></label>
       <label><span>Year: </span><input type="text" ng-model="main.formdata.year"/></label>

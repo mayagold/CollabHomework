@@ -12,7 +12,7 @@ app.controller('mainController', ['$http', function($http){
   this.formdata = {};
 
   // get route
-  this.getAlbum = function() {
+  this.getAlbum = function(){
     $http({
       method:'GET',
       url: '/music'
@@ -21,10 +21,10 @@ app.controller('mainController', ['$http', function($http){
     }, function(err){
       console.log(err);
     });
-  }
+  };
 
   // create route
-  this.createAlbum = function() {
+  this.createAlbum = function(){
     $http({
       method: 'POST',
       url: '/music',

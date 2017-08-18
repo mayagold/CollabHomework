@@ -6,8 +6,8 @@ const bodyParser = require('body-parser');
 const port = 3000 || process.env.PORT;
 
 //controllers
-var musicController = require('./controllers/musicController');
-var seedController = require('./controllers/seedController');
+var musicController = require('./controllers/musicController.js');
+var seedController = require('./controllers/seedController.js');
 
 app.use('/music', musicController);
 app.use('/seed', seedController);
@@ -16,10 +16,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(express.static('public'));
 
-//hello world
-app.get('/', (req,res)=>{
-  res.send('hello world')
-});
 
 //connect to mongo
 mongoose.connect('mongodb://localhost/music_app');

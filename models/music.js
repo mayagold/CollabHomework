@@ -9,6 +9,6 @@ const musicSchema = mongoose.Schema({
   picture: String
 })
 
-const music = mongoose.model('Music', musicSchema);
+const Music = mongoose.model('Music', musicSchema);
 
-module.exports = music;
+module.exports = Music;

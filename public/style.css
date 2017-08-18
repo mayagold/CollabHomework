@@ -2,8 +2,14 @@
 
 body {
   background: lightgrey;
+  font-family: 'Open Sans Condensed', sans-serif;
   margin: 40px;
   text-align: center;
+}
+
+h1 {
+  font-size: 50px;
+  font-family: "Fredericka the Great", cursive;
 }
 
 ul {
@@ -14,15 +20,92 @@ li {
   display: inline-block;
   padding: 20px;
   max-width: 200px;
+  background: whitesmoke;
+  margin: 10px;
+  border: 2px solid black;
+  box-shadow: 1px 1px 4px black;
+  -moz-box-shadow: 1px 1px 4px black;
+  -webkit-box-shadow: 1px 1px 4px black;
 }
 
-li div {
-  display: inline-flex;
-  flex-direction: column;
-}
 
 li img {
   max-width: 200px;
   max-height: 200px;
   display: block;
+  border: 2px solid black;
+  padding: 1px;
+}
+
+form {
+  background: whitesmoke;
+  color: black;
+  padding: 30px;
+  border: 1px solid black;
+  border-radius: 30px;
+  width: 40%;
+  margin: 0 auto;
+  box-shadow: 10px 10px 5px #000000;
+}
+
+.form-style {
+  max-width: 500px;
+  margin: 20px auto;
+  text-align: center;
+}
+
+
+.form-style label{
+    display: block;
+    margin: 0;
+    padding: 10px
+}
+
+.form-style label > span {
+    width: 150px;
+    float: left;
+    text-align: left;
+    font-weight: bold;
+    padding-top: 4px;
+    padding-right: 15px;
+    font-size: 20px
+}
+
+.form-style input{
+    width: 60%;
+}
+
+.form-style h3,a {
+  color: black;
+}
+
+.form-style input {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    border: 1px solid #C2C2C2;
+    box-shadow: 1px 1px 4px black;
+    -moz-box-shadow: 1px 1px 4px black;
+    -webkit-box-shadow: 1px 1px 4px black;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    padding: 7px;
+    outline: none;
+}
+
+.form-style input:hover {
+    background: lightgrey;
+}
+
+form .submit {
+  font-family: "open sans condensed", sans-serif;
+  text-align: center;
+  border: none;
+  padding: 10px;
+  background: whitesmoke;
+  font-size: 18px;
+  margin: 0 auto;
+  font-weight: bold;
+  box-shadow: 1px 1px 4px black;
 }
